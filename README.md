@@ -9,7 +9,7 @@
 
 **Collection de projets démontrant des patterns d'ingénierie logicielle avancés, l'optimisation des performances et les architectures distribuées.**
 
-[FibGo](#-fibgo) • [FibRust](#-fibrust) • [PubSubKafka](#-pubsubkafka)
+[FibGo](#-fibgo) • [FibRust](#-fibrust) • [PubSubKafka](#-pubsubkafka) • [FibBenchmark](#-fibbenchmark)
 
 </div>
 
@@ -17,13 +17,14 @@
 
 ## 📋 Aperçu
 
-Ce repository contient trois projets indépendants qui explorent différentes facettes du développement logiciel haute performance :
+Ce repository contient quatre projets indépendants qui explorent différentes facettes du développement logiciel haute performance :
 
 | Projet | Langage | Description | Licence |
 |--------|---------|-------------|---------|
 | [**FibGo**](./FibGo) | Go 1.25+ | Calculateur Fibonacci ultra-performant avec API REST | Apache 2.0 |
 | [**FibRust**](./FibRust) | Rust 1.75+ | Calculateur Fibonacci parallèle avec NTT | MIT |
 | [**PubSubKafka**](./PubSubKafka) | Go 1.24+ | Architecture événementielle avec Apache Kafka | MIT |
+| [**FibBenchmark**](./FibBenchmark) | Rust 1.70+ | Suite de benchmarking et analyse d'algorithmes | MIT |
 
 ---
 
@@ -215,6 +216,61 @@ make run-monitor
 
 ---
 
+## 🔬 FibBenchmark
+
+<img src="https://img.shields.io/badge/Rust-1.70%2B-orange?style=flat-square" alt="Rust"> <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MIT">
+
+**FibBenchmark** est un écosystème complet de benchmarking pour algorithmes de Fibonacci, offrant des analyses de complexité rigoureuses et des comparaisons cross-language.
+
+### ✨ Caractéristiques Clés
+
+- **6 Algorithmes** — Du récursif naïf $O(2^n)$ au matriciel $O(\log n)$ et SIMD
+- **Optimisations SIMD** — Accélération vectorielle AVX2/AVX512 pour traitements par lots
+- **Benchmarking Rigoureux** — Utilisation de **Criterion.rs** pour des mesures statistiques précises
+- **Comparaison Cross-Language** — Intégration FFI avec **Go** pour comparer les runtimes
+- **Dashboard Interactif** — Visualisation des performances et profils mémoire
+
+### 📦 Structure du Projet
+
+```
+FibBenchmark/
+├── crates/
+│   ├── fib-core/     # Algorithmes & Benchmarks (Criterion)
+│   ├── fib-cli/      # Outil CLI unifié
+│   ├── fib-go/       # Pont FFI vers Go
+│   ├── fib-viz/      # Générateur de graphiques
+│   └── fib-profiler/ # Outil de profiling
+```
+
+### 🚀 Démarrage Rapide
+
+```bash
+cd FibBenchmark
+
+# Comparer toutes les méthodes
+cargo run --bin fib-bench -- compare -n 1000
+
+# Lancer la suite de benchmarks complète
+cargo bench
+
+# Comparer Rust vs Go
+cargo run --bin fib-bench -- compare-go -n 10000
+```
+
+### 📊 Résultats
+
+Le projet démontre l'impact critique du choix algorithmique :
+
+| Algorithme | Complexité | Temps (n=10k) |
+|------------|------------|---------------|
+| Itératif | $O(n)$ | ~12 µs |
+| Matriciel | $O(\log n)$ | ~180 ns |
+| SIMD (Batch) | $O(n/k)$ | Accélération x8-x16 |
+
+📖 [Documentation complète →](./FibBenchmark/README.md)
+
+---
+
 ## 🛠 Technologies Utilisées
 
 ### Langages & Runtimes
@@ -222,7 +278,7 @@ make run-monitor
 | Technologie | Version | Projets |
 |-------------|---------|---------|
 | **Go** | 1.24+ / 1.25+ | FibGo, PubSubKafka |
-| **Rust** | 1.75+ | FibRust |
+| **Rust** | 1.75+ / 1.70+ | FibRust, FibBenchmark |
 
 ### Frameworks & Bibliothèques
 
@@ -231,8 +287,9 @@ make run-monitor
 | **HTTP** | net/http | Axum |
 | **CLI** | cobra | clap |
 | **Observabilité** | zerolog, Prometheus | — |
+| **Benchmarking** | — | Criterion.rs |
 | **Parallélisme** | goroutines | Rayon |
-| **Big Integers** | math/big, GMP | ibig |
+| **Big Integers** | math/big, GMP | ibig, num-bigint |
 | **FFT** | Custom bigfft | rustfft |
 | **Kafka** | confluent-kafka-go | — |
 
@@ -271,6 +328,13 @@ Code/
 │   ├── docker-compose.yaml
 │   └── Makefile
 │
+├── FibBenchmark/             # Suite de benchmarking en Rust
+│   ├── crates/
+│   │   ├── fib-core/         # Bibliothèque d'algorithmes
+│   │   ├── fib-cli/          # Outil CLI unifié
+│   │   └── fib-go/           # Pont FFI vers Go
+│   └── dashboard/            # Interface web de résultats
+│
 └── README.md                 # Ce fichier
 ```
 
@@ -295,6 +359,12 @@ Ces projets illustrent plusieurs concepts avancés :
 - **Parallélisme adaptatif** selon la charge
 - **Auto-calibration** matérielle
 - **LTO** et optimisations de compilation
+- **SIMD** (AVX2/AVX512) pour calculs vectoriels
+
+### Benchmarking Rigoureux
+- Analyse statistique avec **Criterion.rs**
+- Détection automatique de régressions
+- Comparaisons **Cross-Language** (Rust vs Go)
 
 ### Observabilité
 - Métriques **Prometheus**
@@ -310,6 +380,7 @@ Ces projets illustrent plusieurs concepts avancés :
 | FibGo | [Apache License 2.0](./FibGo/LICENSE) |
 | FibRust | MIT |
 | PubSubKafka | [MIT](./PubSubKafka/LICENSE) |
+| FibBenchmark | [MIT](./FibBenchmark/LICENSE) |
 
 ---
 
