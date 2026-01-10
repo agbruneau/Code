@@ -1,4 +1,4 @@
-# 🧮 Code — Portfolio de Projets Haute Performance
+# 🧪 Laboratoire — Expérimentations de Recherche
 
 <div align="center">
 
@@ -7,7 +7,9 @@
 ![Kafka](https://img.shields.io/badge/Apache_Kafka-3.7-231F20?style=for-the-badge&logo=apache-kafka)
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)
 
-**Collection de projets démontrant des patterns d'ingénierie logicielle avancés, l'optimisation des performances et les architectures distribuées.**
+**Expérimentations pratiques issues des recherches théoriques sur l'informatique, l'architecture d'entreprise agentique et l'intelligence artificielle.**
+
+🔬 **[Lien vers les recherches →](https://github.com/agbruneau/Recherche)**
 
 [FibGo](#-fibgo) • [FibRust](#-fibrust) • [PubSubKafka](#-pubsubkafka) • [FibBenchmark](#-fibbenchmark)
 
@@ -15,9 +17,29 @@
 
 ---
 
-## 📋 Aperçu
+## 🎯 Contexte de Recherche
 
-Ce repository contient quatre projets indépendants qui explorent différentes facettes du développement logiciel haute performance :
+Ce dépôt **Laboratoire** contient les **implémentations pratiques et expérimentations** issues des travaux de recherche menés dans le dépôt [**Recherche**](https://github.com/agbruneau/Recherche). Les projets développés ici matérialisent et valident les concepts théoriques explorés dans trois domaines principaux :
+
+### 📚 Connexion aux Piliers de Recherche
+
+| Pilier de Recherche | Projets Associés | Domaines Explorés |
+|---------------------|------------------|-------------------|
+| **[Cursus Informatique](https://github.com/agbruneau/Recherche/tree/main/CursusInformatique)** | FibGo, FibRust, FibBenchmark | Algorithmes avancés, complexité computationnelle, optimisations matérielles (SIMD), benchmarking rigoureux |
+| **[Entreprise Agentique](https://github.com/agbruneau/Recherche/tree/main/EntrepriseAgentique)** | PubSubKafka | Architecture événementielle (EDA), Event-Driven Architecture, maillage agentique, AgentOps |
+| **[Jarvis](https://github.com/agbruneau/Recherche/tree/main/Jarvis)** | *(Futur)* | Intelligence Artificielle Générale (AGI), architectures cognitives, informatique quantique |
+
+Ces expérimentations servent à :
+- ✅ **Valider** les hypothèses théoriques par l'implémentation
+- ✅ **Mesurer** les performances réelles et comparer différentes approches
+- ✅ **Documenter** les patterns d'ingénierie et les architectures émergentes
+- ✅ **Produire** des références pratiques pour les développements futurs
+
+---
+
+## 📋 Aperçu des Expérimentations
+
+Ce repository contient quatre projets expérimentaux qui explorent différentes facettes du développement logiciel haute performance et des architectures distribuées :
 
 | Projet | Langage | Description | Licence |
 |--------|---------|-------------|---------|
@@ -30,9 +52,9 @@ Ce repository contient quatre projets indépendants qui explorent différentes f
 
 ## 🔢 FibGo
 
-<img src="https://img.shields.io/badge/Coverage-80%25-green?style=flat-square" alt="Coverage"> <img src="https://img.shields.io/badge/Status-Production--Ready-success?style=flat-square" alt="Status">
+<img src="https://img.shields.io/badge/Coverage-80%25-green?style=flat-square" alt="Coverage"> <img src="https://img.shields.io/badge/Status-Production--Ready-success?style=flat-square" alt="Status"> <img src="https://img.shields.io/badge/Research-Cursus_Informatique-blue?style=flat-square" alt="Research">
 
-**FibCalc** est un calculateur de nombres de Fibonacci de pointe, capable de calculer $F(250\,000\,000)$ en quelques minutes.
+**FibCalc** est une expérimentation pratique issue du pilier [**Cursus Informatique**](https://github.com/agbruneau/Recherche/tree/main/CursusInformatique). Cette implémentation valide les algorithmes avancés de calcul de nombres de Fibonacci, capable de calculer $F(250\,000\,000)$ en quelques minutes.
 
 ### ✨ Caractéristiques Clés
 
@@ -80,9 +102,9 @@ go run ./cmd/fibcalc --interactive
 
 ## 🦀 FibRust
 
-<img src="https://img.shields.io/badge/Rust-1.75%2B-orange?style=flat-square" alt="Rust"> <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="MIT">
+<img src="https://img.shields.io/badge/Rust-1.75%2B-orange?style=flat-square" alt="Rust"> <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="MIT"> <img src="https://img.shields.io/badge/Research-Cursus_Informatique-blue?style=flat-square" alt="Research">
 
-Implémentation Rust haute performance utilisant **Rayon** pour le parallélisme et des **Transformées de Fourier Numériques (NTT)** pour la multiplication de très grands entiers.
+Expérimentation Rust issue du pilier [**Cursus Informatique**](https://github.com/agbruneau/Recherche/tree/main/CursusInformatique). Cette implémentation explore les performances comparatives du parallélisme avec **Rayon** et des **Transformées de Fourier Numériques (NTT)** pour la multiplication de très grands entiers.
 
 ### ✨ Caractéristiques Clés
 
@@ -133,9 +155,9 @@ cargo run -p fibrust-server --release -- --port 3000
 
 ## 📨 PubSubKafka
 
-<img src="https://img.shields.io/badge/Apache_Kafka-3.7.0-white?style=flat-square&logo=apache-kafka" alt="Kafka"> <img src="https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square" alt="Go">
+<img src="https://img.shields.io/badge/Apache_Kafka-3.7.0-white?style=flat-square&logo=apache-kafka" alt="Kafka"> <img src="https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square" alt="Go"> <img src="https://img.shields.io/badge/Research-Entreprise_Agentique-purple?style=flat-square" alt="Research">
 
-Démonstration d'une **Architecture Événementielle (EDA)** enterprise-grade utilisant **Go** et **Apache Kafka**. Simule un cycle de vie complet de commandes e-commerce avec monitoring temps réel.
+Expérimentation pratique issue du pilier [**Entreprise Agentique**](https://github.com/agbruneau/Recherche/tree/main/EntrepriseAgentique). Cette implémentation valide une **Architecture Événementielle (EDA)** enterprise-grade utilisant **Go** et **Apache Kafka**. Elle matérialise les concepts de maillage agentique et d'AgentOps explorés théoriquement.
 
 ### 🏗 Architecture
 
@@ -218,9 +240,9 @@ make run-monitor
 
 ## 🔬 FibBenchmark
 
-<img src="https://img.shields.io/badge/Rust-1.70%2B-orange?style=flat-square" alt="Rust"> <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MIT">
+<img src="https://img.shields.io/badge/Rust-1.70%2B-orange?style=flat-square" alt="Rust"> <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MIT"> <img src="https://img.shields.io/badge/Research-Cursus_Informatique-blue?style=flat-square" alt="Research">
 
-**FibBenchmark** est un écosystème complet de benchmarking pour algorithmes de Fibonacci, offrant des analyses de complexité rigoureuses et des comparaisons cross-language.
+**FibBenchmark** est une expérimentation issue du pilier [**Cursus Informatique**](https://github.com/agbruneau/Recherche/tree/main/CursusInformatique). Cet écosystème complet de benchmarking valide les analyses de complexité théoriques et permet des comparaisons cross-language rigoureuses entre différentes approches algorithmiques.
 
 ### ✨ Caractéristiques Clés
 
@@ -304,45 +326,48 @@ Le projet démontre l'impact critique du choix algorithmique :
 ## 📚 Structure du Repository
 
 ```
-Code/
-├── FibGo/                    # Calculateur Fibonacci en Go
+Laboratoire/
+├── FibGo/                    # 🔬 Expérimentation: Calculateur Fibonacci en Go
 │   ├── cmd/                  # Points d'entrée
 │   ├── internal/             # Code applicatif privé
-│   │   ├── fibonacci/        # Algorithmes de calcul
-│   │   ├── bigfft/           # Arithmétique FFT
-│   │   ├── server/           # API REST
+│   │   ├── fibonacci/        # Algorithmes de calcul (Fast Doubling, FFT)
+│   │   ├── bigfft/           # Arithmétique FFT pour très grands nombres
+│   │   ├── server/           # API REST avec métriques Prometheus
 │   │   └── ...
-│   ├── Docs/                 # Documentation détaillée
+│   ├── Docs/                 # Documentation détaillée et théorie
 │   └── Makefile
 │
-├── FibRust/                  # Calculateur Fibonacci en Rust
+├── FibRust/                  # 🔬 Expérimentation: Calculateur Fibonacci en Rust
 │   ├── crates/
-│   │   ├── fibrust-core/     # Bibliothèque d'algorithmes
-│   │   ├── fibrust-server/   # Serveur HTTP
-│   │   └── fibrust-cli/      # Interface CLI
+│   │   ├── fibrust-core/     # Bibliothèque d'algorithmes (NTT, parallélisme)
+│   │   ├── fibrust-server/   # Serveur HTTP (Axum)
+│   │   └── fibrust-cli/      # Interface CLI (clap)
 │   └── Cargo.toml
 │
-├── PubSubKafka/              # Architecture événementielle Kafka
+├── PubSubKafka/              # 🔬 Expérimentation: Architecture événementielle Kafka
 │   ├── cmd/                  # Services (producer, tracker, monitor)
-│   ├── pkg/                  # Bibliothèques partagées
-│   ├── docker-compose.yaml
+│   ├── pkg/                  # Bibliothèques partagées (DLQ, monitoring)
+│   ├── docker-compose.yaml   # Infrastructure de test
 │   └── Makefile
 │
-├── FibBenchmark/             # Suite de benchmarking en Rust
+├── FibBenchmark/             # 🔬 Expérimentation: Suite de benchmarking
 │   ├── crates/
-│   │   ├── fib-core/         # Bibliothèque d'algorithmes
+│   │   ├── fib-core/         # Bibliothèque d'algorithmes (6 méthodes)
 │   │   ├── fib-cli/          # Outil CLI unifié
-│   │   └── fib-go/           # Pont FFI vers Go
-│   └── dashboard/            # Interface web de résultats
+│   │   ├── fib-go/           # Pont FFI vers Go (comparaison cross-language)
+│   │   ├── fib-viz/          # Visualisation des résultats
+│   │   └── fib-profiler/     # Profiling de performance
+│   ├── dashboard/            # Interface web de résultats
+│   └── docs/                 # Théorie mathématique et benchmarks
 │
 └── README.md                 # Ce fichier
 ```
 
 ---
 
-## 🎯 Points d'Apprentissage
+## 🎯 Points d'Apprentissage & Validation
 
-Ces projets illustrent plusieurs concepts avancés :
+Ces expérimentations illustrent et valident plusieurs concepts avancés issus des recherches théoriques :
 
 ### Algorithmique
 - Exponentiation rapide et **Fast Doubling**
@@ -384,6 +409,15 @@ Ces projets illustrent plusieurs concepts avancés :
 
 ---
 
+## 🔗 Ressources Complémentaires
+
+- 📚 **[Dépôt Recherche](https://github.com/agbruneau/Recherche)** — Fondations théoriques et documentation exhaustive
+  - [Cursus Informatique](https://github.com/agbruneau/Recherche/tree/main/CursusInformatique) — Fondations théoriques des algorithmes
+  - [Entreprise Agentique](https://github.com/agbruneau/Recherche/tree/main/EntrepriseAgentique) — Architecture événementielle et AgentOps
+  - [Jarvis](https://github.com/agbruneau/Recherche/tree/main/Jarvis) — Recherche AGI et informatique quantique
+
+---
+
 ## 👤 Auteur
 
 **agbruneau**
@@ -394,6 +428,7 @@ Ces projets illustrent plusieurs concepts avancés :
 
 <div align="center">
 
+**🔬 Ce laboratoire matérialise les recherches théoriques en implémentations pratiques**  
 **⭐ N'hésitez pas à star ce repository si vous le trouvez utile !**
 
 </div>
